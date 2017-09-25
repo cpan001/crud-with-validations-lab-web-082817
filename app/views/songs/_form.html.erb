@@ -1,0 +1,52 @@
+<%if @song.errors.any?%>
+<div id="error_explanation">
+<h3>There were some errors:</h3>
+<ul>
+  <%@song.errors.full_messages.each do |msg|%>
+  <li><%=msg%></li>
+  <%end%>
+</ul>
+</div>
+<%end%>
+
+
+<div class="ui form">
+<%=form_for(@song) do |f|%>
+
+<%=f.label :title%>
+<div class="ui inverted input">
+<%=f.text_field :title%>
+</div>
+
+
+<br>
+<%=f.label :release_year%>
+<div class="ui input">
+<%=f.number_field :release_year%>
+</div>
+
+<br>
+<%=f.label :released%>
+<div class="ui checkbox">
+<%=f.check_box :released%>
+</div>
+
+<br>
+<%=f.label :genre%>
+<div class="ui input">
+<%=f.text_field :genre%>
+</div>
+
+<br>
+<%=f.label :artist_name%>
+<div class="ui input">
+<%=f.text_field :artist_name%>
+</div>
+
+<br>
+<div class="ui button">
+<%=f.submit%>
+</div>
+
+<%end%>
+</div>
